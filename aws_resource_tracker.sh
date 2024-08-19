@@ -4,12 +4,15 @@
 # Author: nisat-gg
 # Date: 16th-aug-24
 #
-# Version:: v1
+# Version:: v2
 #
 # This script will report the AWS resource usage
 ####################
 
 set -x  # Enables debug mode
+
+# Add a cron job to run this script every day at 2 AM
+(crontab -l 2>/dev/null | grep -v "/path/to/your/script.sh"; echo "- 2 * * * /path/to/your/script.sh") | crontab -
 
 # AWS S3
 # AWS EC2
